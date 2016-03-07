@@ -1,0 +1,23 @@
+---
+title: NASA Astronauts Guide
+mymeta:
+  data_bootstrap: |
+    mkdir -p nasa-astronauts
+    curl http://www.nasa.gov/pdf/740566main_current.pdf \
+           -o nasa-astronauts/astronauts.pdf
+
+    pdftotext -layout nasa-astronauts/astronauts.pdf \
+                        nasa-astronauts/astronauts.txt
+---
+
+
+# Hello there
+
+
+# Bootstrapping the data
+
+<% code 'shell' do %>
+<%=current_page.data.mymeta.data_bootstrap%>
+<% end %>
+
+
